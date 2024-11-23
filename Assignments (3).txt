@@ -1,0 +1,54 @@
+Functions and Scope
+Theory Assignment:
+
+In JavaScript, functions are blocks of reusable code designed to perform a specific task. Functions allow you to define a set of instructions and then execute them when called. Functions can accept inputs (parameters), execute the code inside the function body, and return a value.
+
+Function Scope:
+Function scope refers to the context in which variables are declared within a function. Variables declared within a function using the var, let, or const keyword are only accessible within that function. They cannot be accessed from outside the function.
+
+function example() {
+    let insideVar = "I am inside the function";
+    console.log(insideVar); // Accessible here
+}
+
+console.log(insideVar); // Error: insideVar is not defined
+
+In this example, insideVar is scoped to the example() function, so it is not accessible outside the function.
+
+Block Scope:
+Block scope refers to the context within curly braces {}. This scope is typically associated with let and const variables, which are block-scoped, meaning they are only accessible within the block of code in which they are defined (such as inside loops, conditionals, or blocks).
+
+if (true) {
+    let blockScopedVar = "I am inside the block";
+    console.log(blockScopedVar); // Accessible here
+}
+
+console.log(blockScopedVar); // Error: blockScopedVar is not defined
+
+Here, blockScopedVar is accessible only within the if block. Once the execution leaves the block, the variable is no longer accessible.
+
+Hoisting:
+Hoisting is a behavior in JavaScript where variable and function declarations are moved ("hoisted") to the top of their containing scope during the compilation phase, before the code is executed.
+
+Hoisting with Functions: Functions declared using the function keyword are hoisted, meaning you can call the function before its declaration in the code.
+
+greet(); // Works fine
+function greet() {
+    console.log("Hello!");
+}
+
+Hoisting with Variables: Variables declared with var are hoisted, but only the declaration is hoisted, not the initialization. This means the variable will be undefined until the code execution reaches its initialization
+
+console.log(x); // undefined
+var x = 5;
+
+With let and const, hoisting occurs, but the variables remain in a "temporal dead zone" until the declaration is encountered, so they can't be accessed before their declaration.
+
+Summary:
+Function scope refers to the visibility of variables inside functions.
+Block scope applies to variables defined inside blocks of code (e.g., loops, conditionals) with let and const.
+Hoisting refers to the process of moving declarations to the top of their scope, with variables and functions being hoisted differently. Functions declared with the function keyword are fully hoisted, while variables declared with var are hoisted without initialization, and those declared with let or const are hoisted but not accessible until their declaration line is reached.
+
+
+
+
